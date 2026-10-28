@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [master]
 
+# Everything here only builds and tests, so the default (write-all) token is
+# more than CI needs: CodeQL's actions/missing-workflow-permissions flags it.
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
